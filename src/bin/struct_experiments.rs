@@ -18,7 +18,14 @@ fn print_car(car: Car) {
     println!("{} {}\ncost: £{}\nreleased in: {}", car.manufacturer, car.model, car.price, car.year_of_release);
 }
 
+struct Product {
+    id: u64,
+    name: String,
+    price: f32
+}
+
 fn main() {
+    println!("===Car Struct===");
     // Multi-line struct definition
     let manufacturer: String = String::from("Honda");
     let model: String = String::from("ZR-V");
@@ -37,4 +44,13 @@ fn main() {
     print_car(mercedes_glb);
     println!();
     print_car(ferrari_roma);
+
+    println!("===Product Struct===");
+    // Mutable struct
+    let mut bread: Product = Product { id: 3728491, name: String::from("Bread"), price: 2.50 };
+    
+    println!("{}\nID: {}\ncost: £{}", bread.name, bread.id, bread.price);
+    println!("After inflation");
+    bread.price = 3.99;
+    println!("{}\nID: {}\ncost: £{}", bread.name, bread.id, bread.price);
 }
