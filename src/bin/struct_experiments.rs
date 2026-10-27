@@ -14,6 +14,10 @@ fn build_car(manufacturer: String, model: String, price: u32, year_of_release: u
     }
 }
 
+fn print_car(car: Car) {
+    println!("{} {}\ncost: £{}\nreleased in: {}", car.manufacturer, car.model, car.price, car.year_of_release);
+}
+
 fn main() {
     // Multi-line struct definition
     let manufacturer: String = String::from("Honda");
@@ -28,9 +32,9 @@ fn main() {
     // Function-based struct definition
     let ferrari_roma: Car = build_car(String::from("Ferrari"), String::from("Roma"), 147_500, 2021);
 
-    println!("{} {}\ncost: £{}\nreleased in: {}", honda_zrv.manufacturer, honda_zrv.model, honda_zrv.price, honda_zrv.year_of_release);
+    print_car(honda_zrv);
     println!();
-    println!("{} {}\ncost: £{}\nreleased in: {}", mercedes_glb.manufacturer, mercedes_glb.model, mercedes_glb.price, mercedes_glb.year_of_release);
+    print_car(mercedes_glb);
     println!();
-    println!("{} {}\ncost: £{}\nreleased in: {}", ferrari_roma.manufacturer, ferrari_roma.model, ferrari_roma.price, ferrari_roma.year_of_release);
+    print_car(ferrari_roma);
 }
